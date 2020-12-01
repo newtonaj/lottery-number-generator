@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css" />
+<title>Page Title</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>YOUR US MEGA LOTTERY LUCKY NUMBERS ARE</h1>
+  
+
+<!--  -->
+  <h2 id="results">
+      <p id="firstBall"><p>
+      <p id="otherBalls"></p>
+  </h2>
+  <button id="btn">get lucky</button>
+</div>
+<script type="text/javascript">
+let megaBall = 20;
+let numbers = 70;
+let firstBall = document.querySelector("#firstBall")
+let otherBalls = document.querySelector("#otherBalls");
+let resultdisplay = document.querySelector("#results");
+let btn = document.querySelector("#btn");
+
+btn.addEventListener("click", function () {
+  firstNumber();
+  otherNumbers();
+  // resultdisplay.innerHTML = first + " " + balls
+
+})
+function firstNumber() {
+ first = Math.floor(Math.random() * megaBall +1);
+//  return first
+  firstBall.innerHTML = first;
+}
+function otherNumbers(){
+  let arr =[];
+  for (i = 0; arr.length <5; i++){
+    fig = (Math.floor(Math.random() * numbers +1)
+    )
+    if (arr.indexOf(fig) ===-1){
+    arr.push(fig);
+    }
+  }
+  otherBalls.innerHTML = arr.join(' ');
+  //  balls = arr.join(' ');
+  // return balls;
+}
+
+  
+</script>
+</body>
+</html>
